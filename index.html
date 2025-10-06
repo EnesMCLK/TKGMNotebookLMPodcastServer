@@ -31,9 +31,8 @@
     </main>
 
     <script>
-
         // -----------------------------------------------------------
-        // Rastgele Podcast Bölümü Oynatıcı
+        // Rastgele Podcast Bölümü Oynatıcı (AutoPlay Engeline Karşı Hazırlıklı)
         // -----------------------------------------------------------
 
         // SES DOSYASI LİSTENİZİ TANIMLAYIN.
@@ -51,49 +50,47 @@
             // Tüm güncel dosyalarınızı buraya eklediğinizden emin olun.
         ];
 
-        const playerrand = document.getElementById('podcast-player');
-        const currentTitlerand = document.getElementById('current-episode-title');
+        const playerRand = document.getElementById('podcast-player');
+        const currentTitleRand = document.getElementById('current-episode-title');
 
         // Rastgele bir ses dosyası seçen ve başlatan fonksiyon
         function initializeRandomPlayback() {
             if (audioFiles.length === 0) {
-                currentTitlerand.textContent = "Hata: Ses dosyası listesi boş! Lütfen audioFiles dizisini kontrol edin.";
+                currentTitle.textContent = "Hata: Ses dosyası listesi boş! Lütfen audioFiles dizisini kontrol edin.";
                 return;
             }
             
-            // Rastgele bir indeks seçimi
             const randomIndex = Math.floor(Math.random() * audioFiles.length);
             const randomFile = audioFiles[randomIndex];
             
-            // Dosya adını temizleyip başlık olarak kullan
+            // Dosya adını temizleyip başlık olarak kullan (örneğin '.m4a' uzantısını kaldır)
             const fileName = randomFile.split('/').pop().replace(/\.[^/.]+$/, "").replace(/_/g, ' '); 
 
             // Oynatıcı kaynağını ayarla
-            playerrand.src = randomFile;
+            playerRand.src = randomFile;
             
             currentTitle.textContent = "Rastgele Seçilen Bölüm Yükleniyor: " + fileName;
 
-            // Otomatik oynatmayı deneme
-            player.play()
+            // Otomatik oynatmayı deneme (Tarayıcı engelleme riskini yönet)
+            playerRand.play()
                 .then(() => {
-                    // Otomatik oynatma başarılı oldu
+                    // Otomatik oynatma başarılı olduysa (Nadir durumda)
                     currentTitle.textContent = "🔊 Şimdi Çalıyor (Rastgele): " + fileName;
                 })
                 .catch(error => {
                     // Otomatik oynatma engellendi
-                    console.warn("Otomatik oynatma tarayıcı tarafından engellendi. Kullanıcı etkileşimi gerekiyor.", error);
-                    currentTitle.textContent = "▶️ Hazır! Oynatmak için Play'e basın: " + fileName;
+                    console.warn("Tarayıcı, kullanıcı etkileşimi olmadan sesi başlattırmıyor. (Autoplay Policy)", error);
+                    
+                    // Kullanıcıya butona basması için net talimat ver
+                    currentTitle.textContent = "▶️ Bölüm Hazır! Oynatmak için Play'e basın: " + fileName;
+                    
+                    // Sayfayı kaydırarak oynatıcıyı görünür hale getir (Opsiyonel)
+                    playerRand.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 });
         }
 
-        // Sayfa tamamen yüklendiğinde başlat
+        // Sayfa tamamen yüklendiğinde başlat (ses dosyasını seç ve yükle)
         document.addEventListener('DOMContentLoaded', initializeRandomPlayback);
-
-        // -----------------------------------------------------------
-        // (Opsiyonel: Eğer daha önce yaptığınız listeleme kodu varsa,
-        // onu bu bloğun hemen altına ekleyebilirsiniz, veya bu kodu
-        // listenin üzerine entegre edebilirsiniz.)
-        // -----------------------------------------------------------
 
         // Ses dosyalarının ve başlıklarının listesi.
         // **URL'leri, GitHub Pages'taki gerçek konumlarına göre güncelleyin.**
