@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TKGM Harita Mühendisliği GYS Popcast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="podcast-header">
+        <h1>TKGM NotebookLM Sesli Özetler</h1>
+        <p>Harita Mühendisliği Ünvan Değişikliği Sınavı Not Defteri'nden.</p>
+    </header>
+
+    <main>
+        <div class="player-container">
+            <h2 id="current-episode-title">Oynatılacak Bölüm Seçin</h2>
+            <audio controls id="podcast-player">
+                Tarayıcınız ses oynatıcıyı desteklemiyor.
+            </audio>
+        </div>
+
+        <section class="episode-list">
+            <h2>Bölümler</h2>
+            
+            <ul id="episodes">
+                </ul>
+            
+        </section>
+    </main>
+
+    <script>
+        // Ses dosyalarının ve başlıklarının listesi.
+        // **URL'leri, GitHub Pages'taki gerçek konumlarına göre güncelleyin.**
+        const podcastEpisodes = [
+            { 
+                title: "Bölüm 1:Kadastro, Mülkiyet ve Memuriyet Türkiye'de Arazi Yönetiminin Teknik ve Hukuki Labirenti", 
+                file: "audio/Kadastro, Mülkiyet ve Memuriyet Türkiye'de Arazi Yönetiminin Teknik ve Hukuki Labirenti.m4a",
+                description: "Türkiye'de tescile konu harita ve planların yapımından, kadastro çalışmalarından ve tüm bu süreçleri yürüten devlet memurları mevzuatından oluşan yoğun bir bilgi setini anlaşılır kılıyor." 
+            },
+            { 
+                title: "Bölüm 2: Türkiye'de Tapu, Kadastro ve Mülkiyetin Güvencesi BÖHHBÜY'den 657 Sayılı Memur Kanununa Mevzuatın Anatomisi", 
+                file: "audio/Türkiye'de Tapu, Kadastro ve Mülkiyetin Güvencesi BÖHHBÜY'den 657 Sayılı Memur Kanununa Mevzuatın Anatomisi.m4a",
+                description: "Türkiye'deki tapu, kadastro ve mülkiyet güvenliğini düzenleyen teknik standartlar (BÖHHBÜY, TUREF) ile bu hassas sistemi yürüten kamu görevlilerinin hak, sorumluluk ve disiplinlerini belirleyen 657 Sayılı Devlet Memurları Kanunu arasındaki bütüncül ilişki bu özette incelenmektedir." 
+            },
+            // Yeni özetlerinizi buraya ekleyin:
+            // { 
+            //     title: "Bölüm 3: Yeni Özetin Başlığı", 
+            //     file: "audio/yeni-ozet.mp3",
+            //     description: "Yeni özetin kısa açıklaması." 
+            // }
+        ];
+
+        const player = document.getElementById('podcast-player');
+        const episodeList = document.getElementById('episodes');
+        const currentTitle = document.getElementById('current-episode-title');
+        
+        // Listeyi oluşturma fonksiyonu
+        podcastEpisodes.forEach(episode => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <h3>${episode.title}</h3>
+                <p>${episode.description}</p>
+                <button class="play-btn" data-file="${episode.file}" data-title="${episode.title}">Oynat</button>
+            `;
+            episodeList.appendChild(listItem);
+        });
+
+        // Oynatma butonu olay dinleyicisi
+        document.querySelectorAll('.play-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const filePath = this.getAttribute('data-file');
+                const title = this.getAttribute('data-title');
+                
+                // Oynatıcıya dosya yolunu ata
+                player.src = filePath;
+                
+                // Başlık alanını güncelle
+                currentTitle.textContent = "Şimdi Oynatılıyor: " + title;
+                
+                // Oynatmaya başla
+                player.play();
+                
+                // Oynatıcıyı sayfanın üstüne kaydır (isteğe bağlı)
+                player.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+    </script>
+</body>
+</html>

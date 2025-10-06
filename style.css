@@ -1,0 +1,161 @@
+/* HEADER ARKA PLAN GÖRSELİ VE YENİ STİL DÜZENLEMESİ */
+
+.podcast-header {
+    /* ... (Arka plan görseli ayarları aynı kalacak) ... */
+    background-image: url('images/podcast-header.png');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center; 
+    height: 200px; 
+    
+    /* İçeriği ortalayın ve rengi beyaz bırakın */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff; /* Başlık rengi beyaz kalıyor */
+    padding: 20px;
+}
+
+.podcast-header h1 {
+    font-size: 2.5em; /* Yazıyı biraz daha büyüttük */
+    margin-bottom: 5px;
+    font-weight: 700; /* Kalınlık ekledik */
+    
+    /* Göz alıcı modern stil: Beyaz yazıya hafif koyu gölge */
+    text-shadow: 
+        1px 1px 0 #0056b3,  /* Ana koyu gölge (Mavi tonundan) */
+        2px 2px 5px rgba(0, 0, 0, 0.7); /* Derinlik ve parlaklık katmanı */
+    
+    text-transform: uppercase; /* Tüm harfleri büyüttük (Modern ve dikkat çekici) */
+    letter-spacing: 2px; /* Harfler arasına boşluk ekledik */
+}
+
+/* Paragraf (P) Stili: Okunurluk ve Hafif Stil */
+.podcast-header p {
+    font-size: 1.1em;
+    font-weight: 400;
+    /* Okunurluğu artırmak için hafif gölge */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+.podcast-header {
+    /* Görselin dosya yolunu arka plan olarak atayın */
+    background-image: url('images/podcast-header.png');
+    
+    /* Görselin tüm header alanını kaplamasını sağlayın */
+    background-size: cover; 
+    
+    /* Görselin tekrarlanmasını engelleyin */
+    background-repeat: no-repeat;
+    
+    /* Görselin içeriği ortalanarak görünmesini sağlayın */
+    background-position: center center; 
+    
+    /* Metnin okunurluğu için bir yükseklik belirleyin */
+    height: 200px; /* Bu değeri görselin oranına göre ayarlayabilirsiniz */
+    
+    /* İçeriği (Metinleri) ortalayın */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* Başlık ve paragraf metninin daha iyi okunması için renkleri değiştirin */
+    color: #ffffff; 
+    text-shadow: 1px 1px 3px #000000; /* Gölge ekleyerek okunurluğu artırın */
+    padding: 20px;
+}
+
+/* Metin stillerini görselin üzerine oturacak şekilde ayarlayın */
+.podcast-header h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.podcast-header p {
+    font-size: 1.2em;
+}
+
+/* Mevcut header stiliniz varsa aşağıdaki kısmı silin veya düzenleyin: */
+header {
+    /* Genel header stillerini sıfırlayın veya kaldırın */
+    padding: 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #2a3c4b;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.player-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+#podcast-player {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.episode-list {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.episode-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.episode-list li {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.episode-list li:last-child {
+    border-bottom: none;
+}
+
+.play-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.play-btn:hover {
+    background-color: #0056b3;
+}
