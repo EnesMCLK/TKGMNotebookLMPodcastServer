@@ -31,6 +31,70 @@
     </main>
 
     <script>
+
+        // -----------------------------------------------------------
+        // Rastgele Podcast Bölümü Oynatıcı
+        // -----------------------------------------------------------
+
+        // SES DOSYASI LİSTENİZİ TANIMLAYIN.
+        // Lütfen bu listeyi "audio/" klasörünüzdeki gerçek dosya adlarınızla güncelleyin.
+        const audioFiles = [
+            "audio/Turkiye'de Tapu ve Mulkiyetin Guvencesi Harita ve Planlarin Yapimi, Kontrolu ve Yanilma Siniri Sirlari.m4a",
+            "audio/Turkiye'de Arazi ve Orman Sinirlari Kadastro, 2B, Mera ve Tapu Guvencesinin Teknik Altyapisi (BOEHBOEY'den LIHKAB'a).m4a",
+            "audio/Tapu, Kadastro ve İmar Labirenti Harita, Mulkiyet ve Teknik Mevzuatin Derinlemesine Incelemesi.m4a",
+            "audio/Medeni Kanunun Temel Taslari Hak Ehliyetinden Mulkiyete, Dijital Dunyanin Yeni Sorunlarina (TMK 4721'in Ilkeleri).m4a",
+            "audio/Türkiye'de Arazi ve Orman Sınırları Kadastro, 2B Alanları ve Hukuki Güvenceyi Sağlayan Çetrefilli Süreçler.m4a",
+            "audio/Türkiye'de Arazi ve Mülkiyetin Sınırları Orman, Mera ve Kadastro Kanunlarının Gizemli Dünyası.m4a",
+            "audio/Türkiye'de Tapu, Kadastro ve Mülkiyetin Güvencesi BÖHHBÜY'den 657 Sayılı Memur Kanununa Mevzuatın Anatomisi.m4a",
+            "audio/Harita Mühendisliği Ünvan Değişikliği Sınavı not defterinindeki sesli özetleri kullanan bir örnek github reposu oluştur.m4a",
+            "audio/Tapu ve Kadastro Haritalarının Şifreleri 4 Nolu Kararname ve 20254 Sayılı Genelge ile Mülkiyet Güvencenizinin Anatomisi.m4a"
+            // Tüm güncel dosyalarınızı buraya eklediğinizden emin olun.
+        ];
+
+        const playerrand = document.getElementById('podcast-player');
+        const currentTitlerand = document.getElementById('current-episode-title');
+
+        // Rastgele bir ses dosyası seçen ve başlatan fonksiyon
+        function initializeRandomPlayback() {
+            if (audioFiles.length === 0) {
+                currentTitlerand.textContent = "Hata: Ses dosyası listesi boş! Lütfen audioFiles dizisini kontrol edin.";
+                return;
+            }
+            
+            // Rastgele bir indeks seçimi
+            const randomIndex = Math.floor(Math.random() * audioFiles.length);
+            const randomFile = audioFiles[randomIndex];
+            
+            // Dosya adını temizleyip başlık olarak kullan
+            const fileName = randomFile.split('/').pop().replace(/\.[^/.]+$/, "").replace(/_/g, ' '); 
+
+            // Oynatıcı kaynağını ayarla
+            playerrand.src = randomFile;
+            
+            currentTitle.textContent = "Rastgele Seçilen Bölüm Yükleniyor: " + fileName;
+
+            // Otomatik oynatmayı deneme
+            player.play()
+                .then(() => {
+                    // Otomatik oynatma başarılı oldu
+                    currentTitle.textContent = "🔊 Şimdi Çalıyor (Rastgele): " + fileName;
+                })
+                .catch(error => {
+                    // Otomatik oynatma engellendi
+                    console.warn("Otomatik oynatma tarayıcı tarafından engellendi. Kullanıcı etkileşimi gerekiyor.", error);
+                    currentTitle.textContent = "▶️ Hazır! Oynatmak için Play'e basın: " + fileName;
+                });
+        }
+
+        // Sayfa tamamen yüklendiğinde başlat
+        document.addEventListener('DOMContentLoaded', initializeRandomPlayback);
+
+        // -----------------------------------------------------------
+        // (Opsiyonel: Eğer daha önce yaptığınız listeleme kodu varsa,
+        // onu bu bloğun hemen altına ekleyebilirsiniz, veya bu kodu
+        // listenin üzerine entegre edebilirsiniz.)
+        // -----------------------------------------------------------
+
         // Ses dosyalarının ve başlıklarının listesi.
         // **URL'leri, GitHub Pages'taki gerçek konumlarına göre güncelleyin.**
         const podcastEpisodes = [
