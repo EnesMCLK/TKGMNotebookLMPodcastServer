@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TKGM Harita Mühendisliği GYS Popcast</title>
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="podcast-header">
+        <h1>TKGM NotebookLM Sesli Özetler</h1>
+        <p>Harita Mühendisliği Ünvan Değişikliği Sınavı Not Defteri'nden.</p>
+    </header>
+
+    <main>
+        <div class="player-container">
+            <h2 id="current-episode-title">Oynatılacak Bölüm Seçin</h2>
+            <audio controls id="podcast-player">
+                Tarayıcınız ses oynatıcıyı desteklemiyor.
+            </audio>
+        </div>
+
+        <section class="episode-list">
+            <h2>Bölümler</h2>
+            
+            <ul id="episodes">
+                </ul>
+            
+        </section>
+    </main>
+
+    <script>
+        // Ses dosyalarının ve başlıklarının listesi.
+        // **URL'leri, GitHub Pages'taki gerçek konumlarına göre güncelleyin.**
+        const podcastEpisodes = [
+            { 
+                title: "Bölüm 1:Kadastro, Mülkiyet ve Memuriyet Türkiye'de Arazi Yönetiminin Teknik ve Hukuki Labirenti", 
+                file: "audio/Kadastro, Mülkiyet ve Memuriyet Türkiye'de Arazi Yönetiminin Teknik ve Hukuki Labirenti.m4a",
+                description: "Türkiye'de tescile konu harita ve planların yapımından, kadastro çalışmalarından ve tüm bu süreçleri yürüten devlet memurları mevzuatından oluşan yoğun bir bilgi setini anlaşılır kılıyor." 
+            },
+            { 
+                title: "Bölüm 2: Türkiye'de Tapu, Kadastro ve Mülkiyetin Güvencesi BÖHHBÜY'den 657 Sayılı Memur Kanununa Mevzuatın Anatomisi", 
+                file: "audio/Türkiye'de Tapu, Kadastro ve Mülkiyetin Güvencesi BÖHHBÜY'den 657 Sayılı Memur Kanununa Mevzuatın Anatomisi.m4a",
+                description: "Türkiye'deki tapu, kadastro ve mülkiyet güvenliğini düzenleyen teknik standartlar (BÖHHBÜY, TUREF) ile bu hassas sistemi yürüten kamu görevlilerinin hak, sorumluluk ve disiplinlerini belirleyen 657 Sayılı Devlet Memurları Kanunu arasındaki bütüncül ilişki bu özette incelenmektedir." 
+            },            
+            { 
+                title: "Bölüm 3: Medeni Kanunun Temel Taşları Hak Ehliyetinden Mülkiyete, Dijital Dünyanın Yeni Sorunlarına (TMK 4721'in İlkeleri)", 
+                file: "audio/Medeni Kanunun Temel Taşları Hak Ehliyetinden Mülkiyete, Dijital Dünyanın Yeni Sorunlarına (TMK 4721'in İlkeleri).m4a",
+                description: "Türk Medeni Kanunu'nun temel ilkeleri (dürüstlük, iyiniyet), hak/fiil ehliyeti kavramları, mülkiyet hakkının kapsamı ve komşuluk hukukundaki sınırlandırmalar derinlemesine analiz edilmektedir." 
+            },
+            { 
+                 title: "Bölüm 4: Tapu ve Kadastro Haritalarının Şifreleri 4 Nolu Kararname ve 20254 Sayılı Genelge ile Mülkiyet Güvenliğinizin Anatomisi", 
+                 file: "audio/Tapu ve Kadastro Haritalarının Şifreleri 4 Nolu Kararname ve 20254 Sayılı Genelge ile Mülkiyet Güvenliğinizin Anatomisi.m4a",
+                 description: "4 Nolu Cumhurbaşkanlığı Kararnamesi ve 2025/4 Sayılı Genelge baz alınarak, Tapu ve Kadastro Genel Müdürlüğü'nün (TKGM) görevleri ve tapuya esas haritaların üretim, kontrol ve tescil süreçleri açıklanmaktadır." 
+             },
+             { 
+                 title: "Bölüm 5: Tapu, Kadastro ve İmar Labirenti Harita, Mülkiyet ve Teknik Mevzuatın Derinlemesine İncelemesi", 
+                 file: "audio/Tapu, Kadastro ve İmar Labirenti Harita, Mülkiyet ve Teknik Mevzuatın Derinlemesine İncelemesi.m4a",
+                 description: "Türkiye'deki harita, kadastro, kamulaştırma ve imar planlama işlemlerinin dayandığı teknik ve hukuki mevzuatın karmaşık ağı, temel kavramlar ve uygulamadaki detaylar üzerinden açıklanmaktadır." 
+             },
+             { 
+                 title: "Bölüm 6: Türkiye'de Arazi ve Mülkiyetin Sınırları Orman, Mera ve Kadastro Kanunlarının Gizemli Dünyası", 
+                 file: "audio/Türkiye'de Arazi ve Mülkiyetin Sınırları Orman, Mera ve Kadastro Kanunlarının Gizemli Dünyası.m4a",
+                 description: "Kadastro, Orman ve Mera Kanunlarının kesişiminde, orman ve mera sınırlarının nasıl belirlendiği, 2B alanlarının hukuki statüsü ve bu süreçlerdeki teknik/idari zorluklar ele alınmaktadır." 
+             },
+             { 
+                 title: "Bölüm 7: Türkiye'de Arazi ve Orman Sınırları Kadastro, 2B Alanları ve Hukuki Güvenceyi Sağlayan Çetrefilli Süreçler", 
+                 file: "audio/Türkiye'de Arazi ve Orman Sınırları Kadastro, 2B Alanları ve Hukuki Güvenceyi Sağlayan Çetrefilli Süreçler.m4a",
+                 description: " 2B alanları, mera ve orman sınırlarının tespiti gibi özel durumlarla birlikte, teknik hataların düzeltilmesi, eski kayıtların güncellenmesi ve kadastro süreçlerindeki hukuki mekanizmaların karmaşıklığını aydınlatmaktadır." 
+             },
+             { 
+                 title: "Bölüm 8: Türkiye'de Arazi ve Orman Sınırları Kadastro, 2B, Mera ve Tapu Güvencesinin Teknik Altyapısı (BÖHHBÜY'den LİHKAB'a)", 
+                 file: "audio/Türkiye'de Arazi ve Orman Sınırları Kadastro, 2B, Mera ve Tapu Güvencesinin Teknik Altyapısı (BÖHHBÜY'den LİHKAB'a).m4a",
+                 description: "Büyük Ölçekli Harita Yönetmeliği (BÖHHBÜY) ve Kadastro Kanunu çerçevesinde, orman/mera sınırlarının belirlenmesi, 2B alanlarının durumu ve özel büroların (LİHKAB) mülkiyet güvencesindeki rolü incelenmektedir." 
+             },
+             { 
+                 title: "Bölüm 9: Türkiye'de Tapu ve Mülkiyetin Güvencesi Harita ve Planların Yapımı, Kontrolü ve Yanılma Sınırı Sırları", 
+                 file: "audio/Türkiye'de Tapu ve Mülkiyetin Güvencesi Harita ve Planların Yapımı, Kontrolü ve Yanılma Sınırı Sırları.m4a",
+                 description: "Tapu ve mülkiyetin güvence altına alınması, harita ve planların hazırlanması, kontrolü ve yanılma sınırları konularında derinlemesine bir inceleme sunulmaktadır." 
+             },
+            /* 
+            Yeni özetlerinizi buraya ekleyin:
+
+             { 
+                 title: "Bölüm x: Başlık", 
+                 file: "audio/yeni-ozet.m4a",
+                 description: "Yeni özetin kısa açıklaması." 
+             },
+            */
+        ];
+
+        const player = document.getElementById('podcast-player');
+        const episodeList = document.getElementById('episodes');
+        const currentTitle = document.getElementById('current-episode-title');
+        
+        // Listeyi oluşturma fonksiyonu
+        podcastEpisodes.forEach(episode => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <h3>${episode.title}</h3>
+                <p>${episode.description}</p>
+                <button class="play-btn" data-file="${episode.file}" data-title="${episode.title}">Oynat</button>
+            `;
+            episodeList.appendChild(listItem);
+        });
+
+        // Oynatma butonu olay dinleyicisi
+        document.querySelectorAll('.play-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const filePath = this.getAttribute('data-file');
+                const title = this.getAttribute('data-title');
+                
+                // Oynatıcıya dosya yolunu ata
+                player.src = filePath;
+                
+                // Başlık alanını güncelle
+                currentTitle.textContent = "Şimdi Oynatılıyor: " + title;
+                
+                // Oynatmaya başla
+                player.play();
+                
+                // Oynatıcıyı sayfanın üstüne kaydır (isteğe bağlı)
+                player.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+    </script>
+</body>
+</html>
