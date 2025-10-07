@@ -1,5 +1,21 @@
-/* HEADER ARKA PLAN GÖRSELİ VE YENİ STİL DÜZENLEMESİ */
+.player-container {
+    /* Sabitleme ve Boyutlandırma: */
+    position: fixed; 
+    bottom: 0;       
+    left: 0;         
+    width: 100%;     
+    z-index: 1000;
+    font-size: smaller; /* Yazı boyutunu küçültür */
+    
+    /* BOŞLUK SIFIRLAMA */
+    margin-bottom: 0 !important; /* Tüm alt boşlukları öncelikli olarak sıfırlar */
+    padding-right: 200px !important; /* Sağ boşluk ekler */
+    padding-left: 10px !important; /* Sol boşluk ekler */
+    
+    /* Diğer stilleriniz... */
+}
 
+/* HEADER ARKA PLAN GÖRSELİ VE YENİ STİL DÜZENLEMESİ */
 .podcast-header {
     /* ... (Arka plan görseli ayarları aynı kalacak) ... */
     background-image: url('images/podcast-header.png');
@@ -85,39 +101,43 @@ header {
 }
 
 body {
+    /* Mevcut stilleriniz: */
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
     color: #333;
+    
+    /* ÖNEMLİ SIFIRLAMA: Tarayıcıların varsayılan margin ve padding değerlerini kaldırır. */
+    margin: 0; 
+    padding: 0;
+    /* (Arka plan renginiz burada kalmalı) */
 }
 
 header {
     background: #2a3c4b;
     color: #fff;
-    padding: 20px 0;
+    padding: 0 0;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 main {
-    max-width: 800px;
+    max-width: 90%;
     margin: 20px auto;
+    margin-bottom: 175px; /* Alt boşluk, sabit oynatıcı için */
     padding: 0 20px;
 }
 
 .player-container {
     background: #fff;
-    padding: 20px;
+    padding: 10px 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
-#podcast-player {
-    width: 100%;
-    margin-top: 15px;
+#podcast-player {   
+    width: 99%;
+    margin-top: 5px;
 }
 
 .episode-list {
