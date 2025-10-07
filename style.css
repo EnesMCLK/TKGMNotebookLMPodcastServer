@@ -9,14 +9,26 @@
     
     /* BOŞLUK SIFIRLAMA */
     margin-bottom: 0 !important; /* Tüm alt boşlukları öncelikli olarak sıfırlar */
-    padding-right: 200px !important; /* Sağ boşluk ekler */
-    padding-left: 10px !important; /* Sol boşluk ekler */
 
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     
     /* Diğer stilleriniz... */
+}
+/* Başlığı ortalamak için */
+#current-episode-title {
+    padding: 10px 0;
+    margin-left: 40px; /* Ortalamayı kaldırıp soldan boşluk ekler */
+}
+
+/* Oynatıcıyı ortalamak için */
+#podcast-player {
+    display: block;
+    width: 95%;
+    margin-right: 100px !important; /* Sağdan boşluk ekler */
+    margin-left: 30px !important; /* Soldan boşluk ekler */
+    margin-bottom: 10px !important; /* Alttan boşluk ekler */
 }
 
 /* HEADER ARKA PLAN GÖRSELİ VE YENİ STİL DÜZENLEMESİ */
@@ -57,33 +69,6 @@
     font-weight: 400;
     /* Okunurluğu artırmak için hafif gölge */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
-}
-.podcast-header {
-    /* Görselin dosya yolunu arka plan olarak atayın */
-    background-image: url('images/podcast-header.png');
-    
-    /* Görselin tüm header alanını kaplamasını sağlayın */
-    background-size: cover; 
-    
-    /* Görselin tekrarlanmasını engelleyin */
-    background-repeat: no-repeat;
-    
-    /* Görselin içeriği ortalanarak görünmesini sağlayın */
-    background-position: center center; 
-    
-    /* Metnin okunurluğu için bir yükseklik belirleyin */
-    height: 200px; /* Bu değeri görselin oranına göre ayarlayabilirsiniz */
-    
-    /* İçeriği (Metinleri) ortalayın */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    /* Başlık ve paragraf metninin daha iyi okunması için renkleri değiştirin */
-    color: #ffffff; 
-    text-shadow: 1px 1px 3px #000000; /* Gölge ekleyerek okunurluğu artırın */
-    padding: 20px;
 }
 
 /* Metin stillerini görselin üzerine oturacak şekilde ayarlayın */
@@ -129,11 +114,6 @@ main {
     margin: 20px auto;
     margin-bottom: 175px; /* Alt boşluk, sabit oynatıcı için */
     padding: 0 20px;
-}
-
-#podcast-player {   
-    width: 99%;
-    margin-top: 5px;
 }
 
 .episode-list {
