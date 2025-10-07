@@ -3,4 +3,4 @@ Bu depo, Google'ın NotebookLM aracıyla üretilen sesli özetleri barındırmak
 
 Proje, Tapu ve Kadastro Genel Müdürlüğü (TKGM) mevzuatı ve Harita Mühendisliği konularındaki notlarınızın sesli kayıtlarını içerir.
 
-https://enesmclk.github.io/TKGMNotebookLMPopcastServer/
+https://enesmclk.github.io/TKGMNotebookLMPodcastServer/
