@@ -12,13 +12,13 @@
 
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5)
     
     /* Diğer stilleriniz... */
 }
 /* Başlığı ortalamak için */
 #current-episode-title {
-    padding: 10px 0;
+    padding: 10px;
     margin-left: 40px; /* Ortalamayı kaldırıp soldan boşluk ekler */
 }
 
