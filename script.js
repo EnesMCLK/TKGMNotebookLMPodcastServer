@@ -5,7 +5,6 @@
 // Sayfa tamamen yüklendiğinde tüm script'i çalıştır.
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- ELEMENTLERİ SEÇME ---
     const player = document.getElementById('podcast-player');
     const currentTitle = document.getElementById('current-episode-title');
     const episodeList = document.getElementById('episodes');
@@ -15,33 +14,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- ZORUNLU ONAY MODAL İŞLEMLERİ ---
     if (modal && acceptButton) {
-        // Modal'ı başlangıçta göster
         modal.style.display = 'flex';
-
-        // Kabul Et butonuna tıklandığında
         acceptButton.addEventListener('click', function() {
-            // 1. Modal'ı gizle
             modal.style.display = 'none';
-            // 2. Oynatıcı kapsayıcısını (başlıkla birlikte) animasyonla göster
             playerContainer.classList.add('is-active');
         });
     } else {
-        // Modal bulunamazsa, oynatıcıyı yine de göster
         playerContainer.classList.add('is-active');
     }
 
     // --- OYNATICI OLAY DİNLEYİCİLERİ ---
     player.addEventListener('play', function() {
-        const playingTitle = this.dataset.playingTitle;
-        if (playingTitle) {
-            currentTitle.textContent = "🔊 Şimdi Oynatılıyor: " + playingTitle;
+        const title = this.dataset.playingTitle;
+        if (title) {
+            currentTitle.textContent = "🔊 Şimdi Oynatılıyor: " + title;
         }
     });
 
     player.addEventListener('pause', function() {
-        const pausedTitle = this.dataset.playingTitle;
-        if (playingTitle) {
-            currentTitle.textContent = "⏸️ Durduruldu: " + playingTitle;
+        // HATA DÜZELTİLDİ: Değişken 'title' olarak yeniden tanımlandı.
+        const title = this.dataset.playingTitle; 
+        if (title) {
+            currentTitle.textContent = "⏸️ Durduruldu: " + title;
         }
     });
     
@@ -82,21 +76,14 @@ document.addEventListener('DOMContentLoaded', () => {
         currentTitle.textContent = "🔄 Rastgele Bölüm Yükleniyor: " + fileName;
         
         player.classList.add('is-visible');
-
-        player.play()
-            .then(() => {
-                console.log("✅ Otomatik oynatma başarılı.");
-            })
-            .catch(error => {
-                console.warn("🚫 Otomatik oynatma engellendi.", error);
-                currentTitle.textContent = "▶️ Oynatmaya Hazır: " + fileName;
-                player.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            });
+        player.play().catch(error => {
+            console.warn("🚫 Otomatik oynatma engellendi.", error);
+            currentTitle.textContent = "▶️ Oynatmaya Hazır: " + fileName;
+            player.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
     }
 
     // --- BÖLÜM LİSTESİNİ OLUŞTURMA ---
-    // Bu kısım için `podcastEpisodes` ve `audioFiles` listelerinin
-    // bu kod bloğunun üstünde tanımlı olduğundan emin olun.
     podcastEpisodes.forEach(episode => {
         const listItem = document.createElement('li');
         listItem.innerHTML = `
@@ -111,14 +98,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.play-btn').forEach(button => {
         button.addEventListener('click', function() {
             const filePath = this.getAttribute('data-file');
-            const title = this.getAttribute('data-title');
-            
+            const fullTitle = this.getAttribute('data-title');
+
+            // YENİ: "Bölüm X:" kısmını başlıktan kaldırıyoruz.
+            const cleanTitle = fullTitle.replace(/Bölüm \d+:\s*/, '').trim();
+
             player.src = filePath;
-            player.dataset.playingTitle = title;
-            currentTitle.textContent = "⏳ Yükleniyor: " + title;
+            // Oynatıcıya 'Bölüm X:' olmadan, temizlenmiş başlığı atıyoruz.
+            player.dataset.playingTitle = cleanTitle; 
+            currentTitle.textContent = "⏳ Yükleniyor: " + cleanTitle;
 
             player.classList.add('is-visible');
-            
             player.play();
             player.scrollIntoView({ behavior: 'smooth' });
         });
