@@ -20,7 +20,23 @@ const audioFiles = [
     "audio\\Tapudan Zilyetliğe Türkiye'deki Mülkiyetin Haritası ve Kilit Rolü (3402 Sayılı Kadastro Kanunu Derinlemesine İnceleme).m4a",
     "audio\\TKGM'nin Krizi Merkeziyetçi Yapı, Mülkiyet Güvenliği ve Operasyonel Esneklik Dengesi (4 Nolu Kararname Analizi).m4a",
     "audio\\Türk Medeni Kanunu'nda Birey ve Toplum Dengesi Kişilik ve Mülkiyet Haklarının Sınırları Üzerine Kritik Tartışma.m4a",
-    "audio\\657 Sayılı Kanun'un Kalbi Tehlikede mi 4B Sözleşmeli Personel İstihdamı Esneklik mi, Liyakati Törpüleyen Bir İstisna mı.m4a"
+    "audio\\657 Sayılı Kanun'un Kalbi Tehlikede mi 4B Sözleşmeli Personel İstihdamı Esneklik mi, Liyakati Törpüleyen Bir İstisna mı.m4a",
+    "audio\\Türk Medeni Kanunu'nun Temelleri Kişiler Hukuku, Ehliyet Şartları ve Kritik Yaş Sınırları (TMK İlk 55 Madde Analizi).m4a",
+    "audio\\Türk Medeni Kanunu'nda Eşya Hukuku Mülkiyetin Sınırları, Kritik Süreler (10 Yıl, 2 Yıl, 15 Gün) ve Komşuluk Sırları (Madde 683-761).m4a",
+    "audio\\Medeni Kanun'un Temelleri Kimliğimizden Mülkiyete; Dürüstlük Kuralı, Hakim Takdiri ve Komşuluk Hukuku Sırları.m4a",
+    "audio\\E-KADASTRO ve MEGSİS'in Sırları Yüz Yıllık Tapu Verisi Nasıl Dijitalleşip E-İmza ile Onaylanıyor.m4a",
+    "audio\\6831 Sayılı Orman Kanunu'nun Anatomisi Orman Ne Demek, 2B Tartışmaları, Yangın Cezaları ve Köylü Destekleri.m4a",
+    "audio\\Türkiye'nin Görünmez Anayasası Harita Üretiminin Teknik Sırları, TUREF ve Kalite Kontrolün Önemi.m4a",
+    "audio\\Çiftçiyi İlgilendiriyor Arazi Toplulaştırması Yönetmeliği ile Yeni Parsel ve Su Yolları Nasıl Belirleniyor.m4a",
+    "audio\\Kadastro Sırasında Mülkiyetinizi Nasıl Paylaşırsınız Ayırma (İfraz) ve Birleştirme (Tevhit) Yönetmeliği Rehberi.m4a",
+    "audio\\Mülkiyetin Teminatı 1987 Kadastro Bilirkişileri Yönetmeliği Neleri Değiştirdi, 40 Yıl Sonra Güncelliğini Koruyor Mu.m4a",
+    "audio\\Kadastro Sınırı Nasıl Çekilir Arazi, Mülkiyet ve 7 Günlük İtirazın Perde Arkası.m4a",
+    "audio\\Tapu Davası Kadastroya Karışırsa Ne Olur Teknik Bir Belgenin Adım Adım İncelenmesi Davalı Taşınmaz Mal Yönetmeliği.m4a",
+    "audio\\Resmî Yazışmaların Dijital Dönüşümü Yönetmelik Neleri Değiştirdi (EBYS, E-İmza ve QR Kodun Resmi İletişimdeki Gücü).m4a",
+    "audio\\Şehirlerimizi Şekillendiren Kurallar Mekânsal Planlar Yönetmeliği'nin Altın Kuralları ve Afet Direnci.m4a",
+    "audio\\Tapu Planlarındaki Gizemli Hata Payı Yanılma Sınırı Yönetmeliği (2022) Ne Diyor ve Parselinizi Nasıl Etkiliyor.m4a",
+    "audio\\Tapu Labirenti, Orman Sınırları ve Memuriyetin Kırmızı Çizgileri Türkiye Arazi Yönetiminin Hukuki ve Teknik Anatomisi.m4a",
+    "audio\\Kadastro Yönetmeliği A'dan Z'ye Arazi Sınırları, Mülkiyet Tespiti ve Tapu Tescil Süreci Kılavuzu.m4a"
 ];
 
 // BÖLÜM BİLGİLERİ LİSTESİ
@@ -104,6 +120,86 @@ const podcastEpisodes = [
          title: "Bölüm 16: 657 Sayılı Kanun'un Kalbi Tehlikede mi 4B Sözleşmeli Personel İstihdamı Esneklik mi, Liyakati Törpüleyen Bir İstisna mı", 
          file: "audio/657 Sayılı Kanun'un Kalbi Tehlikede mi 4B Sözleşmeli Personel İstihdamı Esneklik mi, Liyakati Törpüleyen Bir İstisna mı.m4a",
          description: "657 Sayılı Devlet Memurları Kanunu'nun temelinde, sözleşmeli (4B) personel istihdamının kamu yönetiminin esneklik ihtiyacını karşılayıp karşılamadığı ve memuriyetin temel ilkelerini nasıl etkilediği tartışılmaktadır." 
+     },
+     { 
+         title: "Bölüm 17: Türk Medeni Kanunu'nun Temelleri Kişiler Hukuku, Ehliyet Şartları ve Kritik Yaş Sınırları (TMK İlk 55 Madde Analizi)", 
+         file: "audio/Türk Medeni Kanunu'nun Temelleri Kişiler Hukuku, Ehliyet Şartları ve Kritik Yaş Sınırları (TMK İlk 55 Madde Analizi).m4a",
+         description: "Türk Medeni Kanunu'nun (TMK) başlangıç hükümleri, hak ve fiil ehliyeti, ayırt etme gücü, erginlik ve kısıtlama gibi kişilik hukukunun temel kavramlarını ve kritik yaş sınırlarını analiz etmektedir." 
+     },
+     { 
+         title: "Bölüm 18: Türk Medeni Kanunu'nda Eşya Hukuku Mülkiyetin Sınırları, Kritik Süreler (10 Yıl, 2 Yıl, 15 Gün) ve Komşuluk Sırları (Madde 683-761)", 
+         file: "audio/Türk Medeni Kanunu'nda Eşya Hukuku Mülkiyetin Sınırları, Kritik Süreler (10 Yıl, 2 Yıl, 15 Gün) ve Komşuluk Sırları (Madde 683-761).m4a",
+         description: "TMK'daki mülkiyet hakkının geniş kapsamını (bütünleyici parça, eklenti), istihkak davası, komşuluk hukukundan doğan sınırlamalar ve mülkiyetle ilgili 10 yıl gibi kritik hak düşürücü süreleri incelemektedir." 
+     },
+     { 
+         title: "Bölüm 19: Medeni Kanun'un Temelleri Kimliğimizden Mülkiyete; Dürüstlük Kuralı, Hakim Takdiri ve Komşuluk Hukuku Sırları", 
+         file: "audio/Medeni Kanun'un Temelleri Kimliğimizden Mülkiyete; Dürüstlük Kuralı, Hakim Takdiri ve Komşuluk Hukuku Sırları.m4a",
+         description: "Türk Medeni Kanunu'nun başlangıç hükümlerinde yer alan dürüstlük kuralı, hakimin takdir yetkisi ve mülkiyet üzerindeki komşuluk hukukunun getirdiği temel yükümlülükleri incelemektedir." 
+     },
+     { 
+         title: "Bölüm 20: E-KADASTRO ve MEGSİS'in Sırları Yüz Yıllık Tapu Verisi Nasıl Dijitalleşip E-İmza ile Onaylanıyor", 
+         file: "audio/E-KADASTRO ve MEGSİS'in Sırları Yüz Yıllık Tapu Verisi Nasıl Dijitalleşip E-İmza ile Onaylanıyor.m4a",
+         description: "Tapu ve kadastro kayıtlarının (E-KADASTRO) dijital ortama aktarılması (sayısallaştırma), Mekansal Gayrimenkul Bilgi Sistemi (MEGSİS) ile entegrasyonu ve elektronik imza (E-İmza) ile onaylanma süreçlerini anlatmaktadır." 
+     },
+     { 
+         title: "Bölüm 21: 6831 Sayılı Orman Kanunu'nun Anatomisi Orman Ne Demek, 2B Tartışmaları, Yangın Cezaları ve Köylü Destekleri", 
+         file: "audio/6831 Sayılı Orman Kanunu'nun Anatomisi Orman Ne Demek, 2B Tartışmaları, Yangın Cezaları ve Köylü Destekleri.m4a",
+         description: "6831 Sayılı Orman Kanunu'nun orman tanımını, 2B arazileriyle ilgili karmaşık hukuki süreçleri, orman yangınlarına karşı uygulanan cezaları ve orman köylüsünü destekleme mekanizmalarını detaylıca incelemektedir." 
+     },
+     { 
+         title: "Bölüm 22: Türkiye'nin Görünmez Anayasası Harita Üretiminin Teknik Sırları, TUREF ve Kalite Kontrolün Önemi", 
+         file: "audio/Türkiye'nin Görünmez Anayasası Harita Üretiminin Teknik Sırları, TUREF ve Kalite Kontrolün Önemi.m4a",
+         description: "Türkiye'de büyük ölçekli harita üretiminin teknik standartlarını belirleyen yönetmelikleri, koordinat sistemlerinin (TUREF) rolünü ve kadastro işlemlerindeki kalite kontrol süreçlerinin hayati önemini açıklamaktadır." 
+     },
+     { 
+         title: "Bölüm 23: Çiftçiyi İlgilendiriyor Arazi Toplulaştırması Yönetmeliği ile Yeni Parsel ve Su Yolları Nasıl Belirleniyor", 
+         file: "audio/Çiftçiyi İlgilendiriyor Arazi Toplulaştırması Yönetmeliği ile Yeni Parsel ve Su Yolları Nasıl Belirleniyor.m4a",
+         description: " Arazi Toplulaştırması Yönetmeliği'nin temel amaçlarını, dağıtılacak yeni parselasyon alanlarının nasıl belirlendiğini, tarla içi geliştirme hizmetlerini ve sulama tesislerinin kurulma süreçlerini açıklamaktadır." 
+     },
+     { 
+         title: "Bölüm 24: Kadastro Sırasında Mülkiyetinizi Nasıl Paylaşırsınız Ayırma (İfraz) ve Birleştirme (Tevhit) Yönetmeliği Rehberi", 
+         file: "audio/Kadastro Sırasında Mülkiyetinizi Nasıl Paylaşırsınız Ayırma (İfraz) ve Birleştirme (Tevhit) Yönetmeliği Rehberi.m4a",
+         description: "Kadastro ve İmar Kanunları çerçevesinde bir taşınmazın parçalara ayrılması (ifraz) veya birden fazla taşınmazın birleştirilmesi (tevhit) işlemlerinin teknik ve hukuki usullerini anlatmaktadır." 
+     },
+     { 
+         title: "Bölüm 25: Mülkiyetin Teminatı 1987 Kadastro Bilirkişileri Yönetmeliği Neleri Değiştirdi, 40 Yıl Sonra Güncelliğini Koruyor Mu", 
+         file: "audio/Mülkiyetin Teminatı 1987 Kadastro Bilirkişileri Yönetmeliği Neleri Değiştirdi, 40 Yıl Sonra Güncelliğini Koruyor Mu.m4a",
+         description: "1987 tarihli Kadastro Bilirkişileri Yönetmeliği'nin kimleri bilirkişi olarak atadığını, görevlerini ve zamanın şartları karşısında güncel hukuki etki alanını tartışmaktadır." 
+     },
+     { 
+         title: "Bölüm 26: Kadastro Sınırı Nasıl Çekilir Arazi, Mülkiyet ve 7 Günlük İtirazın Perde Arkası", 
+         file: "audio/Kadastro Sınırı Nasıl Çekilir Arazi, Mülkiyet ve 7 Günlük İtirazın Perde Arkası.m4a",
+         description: "Kadastro tespit ekiplerinin sahada mülkiyet sınırlarını nasıl belirlediği, bu süreçte bilirkişi ve muhtarın rolü, teknik çizimler ile 7 günlük itiraz hakkının hukuki önemini açıklamaktadır." 
+     },
+     { 
+         title: "Bölüm 27: Tapu Davası Kadastroya Karışırsa Ne Olur Teknik Bir Belgenin Adım Adım İncelenmesi Davalı Taşınmaz Mal Yönetmeliği", 
+         file: "audio/Tapu Davası Kadastroya Karışırsa Ne Olur Teknik Bir Belgenin Adım Adım İncelenmesi Davalı Taşınmaz Mal Yönetmeliği.m4a",
+         description: "Kadastro süreci devam ederken açılan tapu davalarının nasıl yönetileceğini ve Davalı Taşınmaz Mal Yönetmeliği'nin teknik belgeleri, yargı süreçlerini ve mülkiyet tespitini adım adım nasıl etkilediğini incelemektedir." 
+     },
+     { 
+         title: "Bölüm 28: Resmî Yazışmaların Dijital Dönüşümü Yönetmelik Neleri Değiştirdi (EBYS, E-İmza ve QR Kodun Resmi İletişimdeki Gücü)", 
+         file: "audio/Resmî Yazışmaların Dijital Dönüşümü Yönetmelik Neleri Değiştirdi (EBYS, E-İmza ve QR Kodun Resmi İletişimdeki Gücü).m4a",
+         description: "Resmî yazışmaların kurallarını yeniden belirleyen yönetmeliğin, kurumlar arası evrak alışverişinde Elektronik Belge Yönetim Sistemlerinin (EBYS) zorunluluğunu, e-imza kullanımını ve QR kodun resmi iletişimdeki rolünü anlatmaktadır." 
+     },
+     { 
+         title: "Bölüm 29: Şehirlerimizi Şekillendiren Kurallar Mekânsal Planlar Yönetmeliği'nin Altın Kuralları ve Afet Direnci", 
+         file: "audio/Şehirlerimizi Şekillendiren Kurallar Mekânsal Planlar Yönetmeliği'nin Altın Kuralları ve Afet Direnci.m4a",
+         description: "Mekânsal Planlar Yapım Yönetmeliği'nin amaçlarını, planlama hiyerarşisini, planlama sürecinde gereken detaylı analizleri ve planların özellikle afet risklerine karşı dirençli olma gerekliliğini vurgulamaktadır." 
+     },
+     { 
+         title: "Bölüm 30: Tapu Planlarındaki Gizemli Hata Payı Yanılma Sınırı Yönetmeliği (2022) Ne Diyor ve Parselinizi Nasıl Etkiliyor", 
+         file: "audio/Tapu Planlarındaki Gizemli Hata Payı Yanılma Sınırı Yönetmeliği (2022) Ne Diyor ve Parselinizi Nasıl Etkiliyor.m4a",
+         description: "2022 tarihli Yanılma Sınırı Yönetmeliği'nin getirdiği teknik toleranslar, ölçüm hatalarından kaynaklanan küçük farkların hukuken hata sayılmama şartlarını ve bu durumun parselinizin yüzölçümünü nasıl etkilediğini açıklamaktadır." 
+     },
+     { 
+         title: "Bölüm 31: Tapu Labirenti, Orman Sınırları ve Memuriyetin Kırmızı Çizgileri Türkiye Arazi Yönetiminin Hukuki ve Teknik Anatomisi", 
+         file: "audio/Tapu Labirenti, Orman Sınırları ve Memuriyetin Kırmızı Çizgileri Türkiye Arazi Yönetiminin Hukuki ve Teknik Anatomisi.m4a",
+         description: "Türkiye'deki arazi yönetimi ve mülkiyet güvenliğinin temellerini, orman ve 2B sınırlarının hukuki belirlenme zorluklarını ve kamu görevlilerinin (657 Sayılı Kanun) uyması gereken etik ve teknik kuralları kapsamlı bir şekilde analiz etmektedir." 
+     },
+     { 
+         title: "Bölüm 32: Kadastro Yönetmeliği A'dan Z'ye Arazi Sınırları, Mülkiyet Tespiti ve Tapu Tescil Süreci Kılavuzu", 
+         file: "audio/Kadastro Yönetmeliği A'dan Z'ye Arazi Sınırları, Mülkiyet Tespiti ve Tapu Tescil Süreci Kılavuzu.m4a",
+         description: "Kadastro Yönetmeliği'nin tüm süreçlerini, kadastro ekiplerinin arazi sınırlarını ve mülkiyet durumunu nasıl tespit ettiğini, teknik kayıtların nasıl düzenlendiğini ve tapu siciline tescil işlemlerinin adım adım nasıl gerçekleştiğini anlatmaktadır." 
      },
      
     /* Yeni özetlerinizi buraya ekleyin:
