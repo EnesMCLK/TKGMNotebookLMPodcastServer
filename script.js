@@ -147,8 +147,7 @@ const audioFiles = [
     "audio\\Resmî Yazışmaların Dijital Dönüşümü Yönetmelik Neleri Değiştirdi (EBYS, E-İmza ve QR Kodun Resmi İletişimdeki Gücü).m4a",
     "audio\\Şehirlerimizi Şekillendiren Kurallar Mekânsal Planlar Yönetmeliği'nin Altın Kuralları ve Afet Direnci.m4a",
     "audio\\Tapu Planlarındaki Gizemli Hata Payı Yanılma Sınırı Yönetmeliği (2022) Ne Diyor ve Parselinizi Nasıl Etkiliyor.m4a",
-    "audio\\Tapu Labirenti, Orman Sınırları ve Memuriyetin Kırmızı Çizgileri Türkiye Arazi Yönetiminin Hukuki ve Teknik Anatomisi.m4a",
-    "audio\\Kadastro Yönetmeliği A'dan Z'ye Arazi Sınırları, Mülkiyet Tespiti ve Tapu Tescil Süreci Kılavuzu.m4a",
+    "audio\\Tapu Labirenti, Orman Sınırları ve Memuriyetin Kırmızı Çizgileri Türkiye Arazi Yönetiminin Hukuki ve Teknik Anatomisi.m4a"
 ];
 
 // BÖLÜM BİLGİLERİ LİSTESİ
@@ -307,11 +306,6 @@ const podcastEpisodes = [
          title: "Bölüm 31: Tapu Labirenti, Orman Sınırları ve Memuriyetin Kırmızı Çizgileri Türkiye Arazi Yönetiminin Hukuki ve Teknik Anatomisi", 
          file: "audio/Tapu Labirenti, Orman Sınırları ve Memuriyetin Kırmızı Çizgileri Türkiye Arazi Yönetiminin Hukuki ve Teknik Anatomisi.m4a",
          description: "Türkiye'deki arazi yönetimi ve mülkiyet güvenliğinin temellerini, orman ve 2B sınırlarının hukuki belirlenme zorluklarını ve kamu görevlilerinin (657 Sayılı Kanun) uyması gereken etik ve teknik kuralları kapsamlı bir şekilde analiz etmektedir." 
-     },
-     { 
-         title: "Bölüm 32: Kadastro Yönetmeliği A'dan Z'ye Arazi Sınırları, Mülkiyet Tespiti ve Tapu Tescil Süreci Kılavuzu", 
-         file: "audio/Kadastro Yönetmeliği A'dan Z'ye Arazi Sınırları, Mülkiyet Tespiti ve Tapu Tescil Süreci Kılavuzu.m4a",
-         description: "Kadastro Yönetmeliği'nin tüm süreçlerini, kadastro ekiplerinin arazi sınırlarını ve mülkiyet durumunu nasıl tespit ettiğini, teknik kayıtların nasıl düzenlendiğini ve tapu siciline tescil işlemlerinin adım adım nasıl gerçekleştiğini anlatmaktadır." 
      },
      
     /* Yeni özetlerinizi buraya ekleyin:
