@@ -203,7 +203,7 @@ main {
     background-color: #fefefe;
     max-height: 90vh; /* Ekran yüksekliğinin %90'ını geçmemeli */
     width: 90%; 
-    max-width: 650px;
+    max-width: 900px;
     padding: 30px; /* İç boşluk artık burada */
     overflow-y: auto; /* Dikey kaydırma çubuğu artık burada */
     
