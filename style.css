@@ -4,8 +4,7 @@
     bottom: 0;       
     left: 0;         
     width: 100%;     
-    z-index: 1000;
-    font-size: smaller;
+    z-index: 1000 !important;
 
     /* Başlangıçta ekranın altında gizli */
     transform: translateY(100%);
@@ -14,7 +13,7 @@
 
     margin-bottom: 0 !important;
     background: #fff;
-    border-radius: 48px 48px 0 0; 
+    border-radius: 24px 24px 0 0; 
     box-shadow: 0 -4px 10px rgba(0,0,0,0.1); /* Gölgeyi üste ver */
 }
 
@@ -22,20 +21,26 @@
 .player-container.is-active {
     transform: translateY(0); /* Orijinal pozisyonuna geri getir */
     opacity: 1;               /* Görünür yap */
+    z-index: 1000 !important; /* Üstte kalmasını sağla */
 }
 
 /* Başlık stili (Değişiklik yok) */
 #current-episode-title {
     padding: 10px 0;
-    margin-left: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-block-start: auto;
+    font-size: medium;
+    justify-self: center;
 }
 
 /* Oynatıcının BAŞLANGIÇ durumu (Gizli) */
 #podcast-player {
     display: block;
     width: 95%;
-    margin-right: 100px !important;
-    margin-left: 30px !important;
+    justify-self: center;
 
     /* Animasyon için başlangıç değerleri */
     max-height: 0; /* Yüksekliği sıfırla */
@@ -142,6 +147,7 @@ main {
 .episode-list {
     background: #fff;
     padding: 20px;
+    margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }

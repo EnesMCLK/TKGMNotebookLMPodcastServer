@@ -147,7 +147,8 @@ const audioFiles = [
     "audio\\Resmî Yazışmaların Dijital Dönüşümü Yönetmelik Neleri Değiştirdi (EBYS, E-İmza ve QR Kodun Resmi İletişimdeki Gücü).m4a",
     "audio\\Şehirlerimizi Şekillendiren Kurallar Mekânsal Planlar Yönetmeliği'nin Altın Kuralları ve Afet Direnci.m4a",
     "audio\\Tapu Planlarındaki Gizemli Hata Payı Yanılma Sınırı Yönetmeliği (2022) Ne Diyor ve Parselinizi Nasıl Etkiliyor.m4a",
-    "audio\\Tapu Labirenti, Orman Sınırları ve Memuriyetin Kırmızı Çizgileri Türkiye Arazi Yönetiminin Hukuki ve Teknik Anatomisi.m4a"
+    "audio\\Tapu Labirenti, Orman Sınırları ve Memuriyetin Kırmızı Çizgileri Türkiye Arazi Yönetiminin Hukuki ve Teknik Anatomisi.m4a",
+    "audio\\Türkiye'de Arazi ve Mülkiyetin Sınırları Kadastro Sürecinin A'dan Z'ye Hukuki Haritası.m4a"
 ];
 
 // BÖLÜM BİLGİLERİ LİSTESİ
@@ -306,6 +307,11 @@ const podcastEpisodes = [
          title: "Bölüm 31: Tapu Labirenti, Orman Sınırları ve Memuriyetin Kırmızı Çizgileri Türkiye Arazi Yönetiminin Hukuki ve Teknik Anatomisi", 
          file: "audio/Tapu Labirenti, Orman Sınırları ve Memuriyetin Kırmızı Çizgileri Türkiye Arazi Yönetiminin Hukuki ve Teknik Anatomisi.m4a",
          description: "Türkiye'deki arazi yönetimi ve mülkiyet güvenliğinin temellerini, orman ve 2B sınırlarının hukuki belirlenme zorluklarını ve kamu görevlilerinin (657 Sayılı Kanun) uyması gereken etik ve teknik kuralları kapsamlı bir şekilde analiz etmektedir." 
+     },
+     { 
+         title: "Bölüm 32: Türkiye'de Arazi ve Mülkiyetin Sınırları Kadastro Sürecinin A'dan Z'ye Hukuki Haritası", 
+         file: "audio/Türkiye'de Arazi ve Mülkiyetin Sınırları Kadastro Sürecinin A'dan Z'ye Hukuki Haritası.m4a",
+         description: "Türkiye'de Arazi ve Mülkiyetin Sınırlarını, Kadastro Sürecinin A'dan Z'ye Hukuki Haritasını çıkararak incelemektedir." 
      },
      
     /* Yeni özetlerinizi buraya ekleyin:
