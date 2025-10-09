@@ -120,13 +120,29 @@ const podcastEpisodes = [
 // Sayfa tamamen yüklendiğinde tüm script'i çalıştır.
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- ELEMENTLERİ SEÇME ---
     const player = document.getElementById('podcast-player');
     const currentTitle = document.getElementById('current-episode-title');
     const episodeList = document.getElementById('episodes');
+    const playerContainer = document.querySelector('.player-container');
+    const modal = document.getElementById('mandatory-consent-modal');
+    const acceptButton = document.getElementById('accept-button');
+
+    // --- ZORUNLU ONAY MODAL İŞLEMLERİ ---
+    if (modal && acceptButton) {
+        // Modal'ı başlangıçta göster
+        modal.style.display = 'flex';
+
+        // Kabul Et butonuna tıklandığında
+        acceptButton.addEventListener('click', function() {
+            // 1. Modal'ı gizle
+            modal.style.display = 'none';
+            // 2. Oynatıcı kapsayıcısını (başlıkla birlikte) animasyonla göster
+            playerContainer.classList.add('is-active');
+        });
+    }
 
     // --- OYNATICI OLAY DİNLEYİCİLERİ ---
-    
-    // Oynatma başladığında başlığı güncelle
     player.addEventListener('play', function() {
         const playingTitle = this.dataset.playingTitle;
         if (playingTitle) {
@@ -134,42 +150,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Duraklatıldığında başlığı güncelle
     player.addEventListener('pause', function() {
-        const pausedTitle = this.dataset.playingTitle;
-        if (pausedTitle) {
-            currentTitle.textContent = "⏸️ Durduruldu: " + pausedTitle;
+        const playingTitle = this.dataset.playingTitle;
+        if (playingTitle) {
+            currentTitle.textContent = "⏸️ Durduruldu: " + playingTitle;
         }
     });
     
-    // *** YENİ: Bölüm bittiğinde rastgele yeni bir bölüm başlat ***
     player.addEventListener('ended', function() {
         const endedTitle = this.dataset.playingTitle;
         currentTitle.innerHTML = `🎧 ${endedTitle} bitti. <br>⏳ Yeni bölüm yükleniyor...`;
-        
-        // Kısa bir bekleme süresi sonrası yeni bölümü başlatmak daha iyi bir kullanıcı deneyimi sunabilir.
         setTimeout(() => {
             initializeRandomPlayback();
-        }, 1500); // 1.5 saniye bekle
+        }, 1500);
     });
 
     // --- RASTGELE BÖLÜM OYNATMA FONKSİYONU ---
     function initializeRandomPlayback() {
         if (audioFiles.length === 0) {
-            currentTitle.textContent = "Hata: Ses dosyası listesi boş!";
+            currentTitle.textContent = "❌ Hata: Ses dosyası listesi boş!";
             return;
         }
         
         let randomIndex = Math.floor(Math.random() * audioFiles.length);
         let randomFile = audioFiles[randomIndex];
         
-        // O an çalan bölümün tekrar seçilmesini engelle
         const currentSrc = player.src.split('/').pop();
         const randomFileName = randomFile.split('\\').pop();
         
-        // Eğer aynı dosya seçildiyse, liste uzunluğu 1'den büyükse yeni bir tane seç
         if (audioFiles.length > 1 && decodeURI(currentSrc) === randomFileName) {
-            // Farklı bir index bulana kadar tekrar dene
             let newIndex;
             do {
                 newIndex = Math.floor(Math.random() * audioFiles.length);
@@ -181,19 +190,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const fileName = randomFile.split('\\').pop().replace(/\.[^/.]+$/, "").replace(/_/g, ' ');
         
         player.src = randomFile;
-        // Oynatıcıya mevcut bölümün adını bir 'data' attribute olarak ekle
         player.dataset.playingTitle = fileName; 
+        currentTitle.textContent = "🔄 Rastgele Bölüm Yükleniyor: " + fileName;
         
-        currentTitle.textContent = "Rastgele Bölüm Yükleniyor: " + fileName;
-        
+        // Oynatıcıyı animasyonla görünür yap
+        player.classList.add('is-visible');
+
         player.play()
             .then(() => {
-                // Başarılı oynatma durumunda 'play' olayı başlığı zaten güncelleyecektir.
-                console.log("Otomatik oynatma başarılı.");
+                console.log("✅ Otomatik oynatma başarılı.");
             })
             .catch(error => {
-                // Otomatik oynatma tarayıcı tarafından engellendiğinde
-                console.warn("Otomatik oynatma engellendi.", error);
+                console.warn("🚫 Otomatik oynatma engellendi.", error);
                 currentTitle.textContent = "▶️ Oynatmaya Hazır: " + fileName;
                 player.scrollIntoView({ behavior: 'smooth', block: 'center' });
             });
@@ -217,19 +225,40 @@ document.addEventListener('DOMContentLoaded', () => {
             const title = this.getAttribute('data-title');
             
             player.src = filePath;
-            // Oynatıcıya seçilen bölümün adını 'data' attribute olarak ata
             player.dataset.playingTitle = title;
-            
-            currentTitle.textContent = "Yükleniyor: " + title;
+            currentTitle.textContent = "⏳ Yükleniyor: " + title;
+
+            // Oynatıcıyı animasyonla görünür yap
+            player.classList.add('is-visible');
             
             player.play();
-            
             player.scrollIntoView({ behavior: 'smooth' });
         });
     });
-
-    // --- BAŞLANGIÇ ---
-    // Sayfa yüklendiğinde rastgele bir bölümü başlatmayı dene
-    initializeRandomPlayback();
-
 });
+
+// -----------------------------------------------------------
+// ZORUNLU ONAY KONTROLÜ VE OYNATMAYI BAŞLATMA
+// -----------------------------------------------------------
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('mandatory-consent-modal');
+    const acceptButton = document.getElementById('accept-button');
+
+    // 1. Modal'ı göster
+    if (modal) {
+        // Modal'ın default olarak flex (görünür) olarak başlaması CSS'de ayarlanmıştır.
+        // Güvenlik için tekrar flex olarak ayarlayalım.
+        modal.style.display = 'flex'; 
+    }
+    
+    // 2. Kabul Et butonuna tıklandığında işlemi gerçekleştir
+    if (acceptButton) {
+        acceptButton.addEventListener('click', function() {
+            // Modal'ı gizle
+            modal.style.display = 'none';
+        });
+    }
+});
+
+// Oynatıcıyı görünür yap ve animasyonu başlat
+document.querySelector('.player-container').classList.add('is-active');

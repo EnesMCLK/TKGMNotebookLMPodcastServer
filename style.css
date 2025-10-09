@@ -1,34 +1,57 @@
+/* player-container'ın BAŞLANGIÇ durumu (Gizli) */
 .player-container {
-    /* Sabitleme ve Boyutlandırma: */
     position: fixed; 
     bottom: 0;       
     left: 0;         
     width: 100%;     
     z-index: 1000;
-    font-size: smaller; /* Yazı boyutunu küçültür */
-    
-    /* BOŞLUK SIFIRLAMA */
-    margin-bottom: 0 !important; /* Tüm alt boşlukları öncelikli olarak sıfırlar */
+    font-size: smaller;
 
+    /* Başlangıçta ekranın altında gizli */
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+
+    margin-bottom: 0 !important;
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    
-    /* Diğer stilleriniz... */
+    border-radius: 48px 48px 0 0; 
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.1); /* Gölgeyi üste ver */
 }
-/* Başlığı ortalamak için */
+
+/* player-container'ın GÖRÜNÜR durumu */
+.player-container.is-active {
+    transform: translateY(0); /* Orijinal pozisyonuna geri getir */
+    opacity: 1;               /* Görünür yap */
+}
+
+/* Başlık stili (Değişiklik yok) */
 #current-episode-title {
     padding: 10px 0;
-    margin-left: 40px; /* Ortalamayı kaldırıp soldan boşluk ekler */
+    margin-left: 40px;
 }
 
-/* Oynatıcıyı ortalamak için */
+/* Oynatıcının BAŞLANGIÇ durumu (Gizli) */
 #podcast-player {
     display: block;
     width: 95%;
-    margin-right: 100px !important; /* Sağdan boşluk ekler */
-    margin-left: 30px !important; /* Soldan boşluk ekler */
-    margin-bottom: 10px !important; /* Alttan boşluk ekler */
+    margin-right: 100px !important;
+    margin-left: 30px !important;
+
+    /* Animasyon için başlangıç değerleri */
+    max-height: 0; /* Yüksekliği sıfırla */
+    opacity: 0;
+    overflow: hidden; /* İçeriğin taşmasını engelle */
+    margin-bottom: 0 !important; /* Alt boşluğu sıfırla */
+
+    /* Animasyon geçişi */
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, margin-bottom 0.5s ease-in-out;
+}
+
+/* Oynatıcının GÖRÜNÜR durumu */
+#podcast-player.is-visible {
+    max-height: 100px; /* Oynatıcıyı gösterecek kadar yükseklik ver */
+    opacity: 1;
+    margin-bottom: 10px !important; /* Alt boşluğu geri ekle */
 }
 
 /* HEADER ARKA PLAN GÖRSELİ VE YENİ STİL DÜZENLEMESİ */
@@ -154,4 +177,82 @@ main {
 
 .play-btn:hover {
     background-color: #0056b3;
+}
+
+/* ZORUNLU ONAY MODAL STİLLERİ */
+#mandatory-consent-modal {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* ARKA PLAN AYARI: Daha az sert bir karartma */
+    background-color: rgba(0, 0, 0, 0.75); 
+    
+    /* İÇERİĞİ EKRANIN TAM ORTASINA GETİRME */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    z-index: 9999; 
+    /* Padding ve overflow buradan kaldırıldı */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    max-height: 90vh; /* Ekran yüksekliğinin %90'ını geçmemeli */
+    width: 90%; 
+    max-width: 650px;
+    padding: 30px; /* İç boşluk artık burada */
+    overflow-y: auto; /* Dikey kaydırma çubuğu artık burada */
+    
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    text-align: center;
+    animation: slideDownFadeIn 0.6s ease-out forwards;
+}
+
+.modal-content h2 {
+    color: #b30000; /* Kırmızımsı uyarı rengi */
+}
+
+.modal-content ul {
+    text-align: left;
+    margin-top: 10px;
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.modal-content button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+.final-warning {
+    color: #444;
+    font-style: italic;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+
+/* Modal için yukarıdan aşağı kayma animasyonu */
+@keyframes slideDownFadeIn {
+    from {
+        /* Başlangıç: Biraz yukarıda ve tamamen şeffaf */
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        /* Bitiş: Tam ortada ve tamamen görünür */
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

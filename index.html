@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TKGM Harita Mühendisliği GYS Podcast</title>
-    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="mandatory-consent-modal">
+        <div class="modal-content">
+            <h2>⚠️ Özet Bilgilendirme ve Yasal Uyarı</h2>
+            <p>Bu web sitesindeki tüm podcast konuşmaları ve sesli özetler, <strong>Google LLC'nin NotebookLM yapay zeka altyapısı</strong> kullanılarak üretilmiştir.</p>
+
+            <h3>İçerik Doğruluğu ve Hata Riski</h3>
+            <ul>
+                <li><strong>Teknik ve Bilgi Hataları:</strong> Üretilen içerik sentetik ses ve yapay zeka özetleme teknolojisi kullandığından, telaffuzda, kısaltmalarda veya hukuki/teknik bilgilerin doğruluğunda hatalar bulunabilir.</li>
+                <li><strong>Sorumluluk Reddi:</strong> Kritik kararlar almadan önce daima orijinal yasal metinleri ve uzman görüşlerini esas alınız. Sitemiz, yapay zeka kaynaklı bilgi hatalarından sorumlu değildir.</li>
+            </ul>
+
+            <h3>Telif Hakkı (Telif Hakkı Sahibi)</h3>
+            <ul>
+                <li><strong>İçerik:</strong> Podcast'in dayandığı metin içeriğinin fikri mülkiyet hakları site sahibine aittir.</li>
+                <li><strong>Altyapı:</strong> Ses sentezi ve üretim altyapısının kullanım hakları ve telifleri, Google LLC'nin kullanım politikaları tarafından korunmaktadır ve bu politikalara tabidir.</li>
+            </ul>
+
+            <p class="final-warning">Bu siteye erişim sağlamak için yukarıdaki şartları okuyup anladığınızı ve kabul ettiğinizi onaylamanız zorunludur.</p>
+
+            <button id="accept-button">Şartları Okudum ve Kabul Ediyorum</button>
+        </div>
+    </div>
+
     <header class="podcast-header">
         <h1>TKGM NotebookLM Sesli Özetler</h1>
         <p>Harita Mühendisliği Ünvan Değişikliği Sınavı Notlarından</p>
@@ -15,7 +39,7 @@
 
     <main>
         <div class="player-container">
-            <h2 id="current-episode-title">Oynatılacak Bölüm Seçin</h2>
+            <h2 id="current-episode-title">🎶 Oynatılacak Bölümü Seçiniz</h2>
             <audio controls id="podcast-player">
                 Tarayıcınız ses oynatıcıyı desteklemiyor.
             </audio>
