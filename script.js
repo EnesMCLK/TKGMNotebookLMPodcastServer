@@ -148,7 +148,15 @@ const audioFiles = [
     "audio\\Şehirlerimizi Şekillendiren Kurallar Mekânsal Planlar Yönetmeliği'nin Altın Kuralları ve Afet Direnci.m4a",
     "audio\\Tapu Planlarındaki Gizemli Hata Payı Yanılma Sınırı Yönetmeliği (2022) Ne Diyor ve Parselinizi Nasıl Etkiliyor.m4a",
     "audio\\Tapu Labirenti, Orman Sınırları ve Memuriyetin Kırmızı Çizgileri Türkiye Arazi Yönetiminin Hukuki ve Teknik Anatomisi.m4a",
-    "audio\\Türkiye'de Arazi ve Mülkiyetin Sınırları Kadastro Sürecinin A'dan Z'ye Hukuki Haritası.m4a"
+    "audio\\Türkiye'de Arazi ve Mülkiyetin Sınırları Kadastro Sürecinin A'dan Z'ye Hukuki Haritası.m4a",
+    "audio\\657'nin Kariyer Sırları Memur Sınıflandırması, Derece, Kademe ve Liyakat Üçgeni.m4a",
+    "audio\\657 Sayılı Kanun'da Sosyal Haklar ve Yardımlar Başlangıç, Süre ve Koşulların Kritik Detayları.m4a",
+    "audio\\657 Sayılı Kanun'un Anayasası Memuriyetin Kritik Süreleri, Hakları ve Disiplin Kuralları (İşe Başlamadan İhraç Sürecine Tüm Detaylar).m4a",
+    "audio\\657'de Zamanın Yönetimi Çalışma Saatlerinden İzinlere ve Terfilere Memuriyetin Kritik Süreleri.m4a",
+    "audio\\657 Sayılı Kanun'da Kritik Süreler Memuriyete Girişten Ayrılışa Atama, Adaylık ve Yaptırımların Zaman Çizelgesi.m4a",
+    "audio\\657 Sayılı Kanun'da Maaşın Sırrı Yüzde Oranlar, Süre Kısıtlamaları ve Tazminat Hesaplamaları.m4a",
+    "audio\\657 Sayılı Kanun'da Sosyal Haklar ve Yardımlar Başlangıç, Süre ve Koşulların Kritik Detayları.m4a",
+    "audio\\657 Sayılı Kanun'da Zaman Baskısı Memuriyet Hayatını Başlangıçtan Disipline Kadar Yöneten Süreler, Sınırlar ve Kritik Tarihler.m4a"
 ];
 
 // BÖLÜM BİLGİLERİ LİSTESİ
@@ -312,6 +320,46 @@ const podcastEpisodes = [
          title: "Bölüm 32: Türkiye'de Arazi ve Mülkiyetin Sınırları Kadastro Sürecinin A'dan Z'ye Hukuki Haritası", 
          file: "audio/Türkiye'de Arazi ve Mülkiyetin Sınırları Kadastro Sürecinin A'dan Z'ye Hukuki Haritası.m4a",
          description: "Türkiye'de Arazi ve Mülkiyetin Sınırlarını, Kadastro Sürecinin A'dan Z'ye Hukuki Haritasını çıkararak incelemektedir." 
+     },
+     { 
+         title: "Bölüm 33: 657'nin Kariyer Sırları Memur Sınıflandırması, Derece, Kademe ve Liyakat Üçgeni", 
+         file: "audio/657'nin Kariyer Sırları Memur Sınıflandırması, Derece, Kademe ve Liyakat Üçgeni.m4a",
+         description: "657 Sayılı Devlet Memurları Kanunu çerçevesinde memurların sınıflandırılması, derece ve kademe sisteminin işleyişi ile liyakat ilkesinin önemi ele alınmaktadır." 
+     },
+     { 
+         title: "Bölüm 34: 657'de Sosyal Hakların Sırrı Aile Yardımı Haczedilemez mi Giyecek ve Yiyecek Yönetmeliğinde Ne Saklı", 
+         file: "audio/657'de Sosyal Hakların Sırrı Aile Yardımı Haczedilemez mi Giyecek ve Yiyecek Yönetmeliğinde Ne Saklı.m4a",
+         description: "657 Sayılı Devlet Memurları Kanunu çerçevesinde sosyal hakların korunması, aile yardımı, giyecek ve yiyecek yardımları gibi konuların hukuki boyutları ele alınmaktadır." 
+     },
+     { 
+         title: "Bölüm 35: 657 Sayılı Kanun'un Anayasası Memuriyetin Kritik Süreleri, Hakları ve Disiplin Kuralları (İşe Başlamadan İhraç Sürecine Tüm Detaylar)", 
+         file: "audio/657 Sayılı Kanun'un Anayasası Memuriyetin Kritik Süreleri, Hakları ve Disiplin Kuralları (İşe Başlamadan İhraç Sürecine Tüm Detaylar).m4a",
+         description: "657 Sayılı Devlet Memurları Kanunu çerçevesinde memurların hakları, disiplin kuralları ve işe başlama süreçleri ele alınmaktadır." 
+     },
+     { 
+         title: "Bölüm 36: 657'de Zamanın Yönetimi Çalışma Saatlerinden İzinlere ve Terfilere Memuriyetin Kritik Süreleri", 
+         file: "audio/657'de Zamanın Yönetimi Çalışma Saatlerinden İzinlere ve Terfilere Memuriyetin Kritik Süreleri.m4a",
+         description: "657 Sayılı Devlet Memurları Kanunu çerçevesinde memurların çalışma saatleri, izin hakları ve terfi süreçleri ele alınmaktadır." 
+     },
+     { 
+         title: "Bölüm 37: 657 Sayılı Kanun'da Kritik Süreler Memuriyete Girişten Ayrılışa Atama, Adaylık ve Yaptırımların Zaman Çizelgesi", 
+         file: "audio/657 Sayılı Kanun'da Kritik Süreler Memuriyete Girişten Ayrılışa Atama, Adaylık ve Yaptırımların Zaman Çizelgesi.m4a",
+         description: "657 Sayılı Devlet Memurları Kanunu çerçevesinde memuriyete girişten ayrılışa kadar olan süreçler, atama, adaylık ve yaptırımların zaman çizelgesi ele alınmaktadır." 
+     },
+     { 
+         title: "Bölüm 38: 657 Sayılı Kanun'da Maaşın Sırrı Yüzde Oranlar, Süre Kısıtlamaları ve Tazminat Hesaplamaları", 
+         file: "audio/657 Sayılı Kanun'da Maaşın Sırrı Yüzde Oranlar, Süre Kısıtlamaları ve Tazminat Hesaplamaları.m4a",
+         description: "657 Sayılı Devlet Memurları Kanunu çerçevesinde maaşın hesaplanmasında dikkate alınan yüzde oranları, süre kısıtlamaları ve tazminat hesaplamaları ele alınmaktadır." 
+     },
+     { 
+         title: "Bölüm 39: 657 Sayılı Kanun'da Sosyal Haklar ve Yardımlar Başlangıç, Süre ve Koşulların Kritik Detayları", 
+         file: "audio/657 Sayılı Kanun'da Sosyal Haklar ve Yardımlar Başlangıç, Süre ve Koşulların Kritik Detayları.m4a",
+         description: "657 Sayılı Devlet Memurları Kanunu çerçevesinde sosyal haklar ve yardımların başlangıcı, süresi ve koşulları ele alınmaktadır." 
+     },
+     { 
+         title: "Bölüm 40: 657 Sayılı Kanun'da Zaman Baskısı Memuriyet Hayatını Başlangıçtan Disipline Kadar Yöneten Süreler, Sınırlar ve Kritik Tarihler", 
+         file: "audio/657 Sayılı Kanun'da Zaman Baskısı Memuriyet Hayatını Başlangıçtan Disipline Kadar Yöneten Süreler, Sınırlar ve Kritik Tarihler.m4a",
+         description: "657 Sayılı Devlet Memurları Kanunu çerçevesinde memuriyet hayatını yöneten süreler, sınırlar ve kritik tarihler ele alınmaktadır." 
      },
      
     /* Yeni özetlerinizi buraya ekleyin:
